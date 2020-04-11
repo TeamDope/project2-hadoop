@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS ${var:database}.employees
 COMMENT 'Parquet employees table'
 STORED AS Parquet
 AS
-SELECT employee_id, first_name, middle_initial, last_name, UPPER(region) AS region
+SELECT employee_id, first_name, middle_initial, last_name, UPPER(region) 
 from ${var:source_database}.employees;
 
 

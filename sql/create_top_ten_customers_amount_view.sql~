@@ -12,4 +12,4 @@ ORDER BY amount DESC
 LIMIT 10;
 
 invalidate metadata;
-
+compute stats ${var:database}.top_ten_customers_amount;

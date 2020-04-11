@@ -1,4 +1,4 @@
-SET VAR:database_name=dope_sales_raw;
+SET VAR:database_name=dope_sales;
 --View: customer_monthly_sales_2019_partitioned_view
 --Customer id, customer last name, customer first name,
 --year, month, aggregate total amount

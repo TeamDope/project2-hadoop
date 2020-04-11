@@ -7,7 +7,7 @@
 --${var:database_name}
 --Create Database
 
-SET VAR:database_name=dope_sales_raw;
+SET VAR:database_name=dope_sales;
 
 Create Database IF NOT EXISTS ${VAR:database_name}
 COMMENT 'sales data';

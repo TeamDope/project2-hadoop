@@ -21,6 +21,6 @@ AS SELECT po.*, e.region FROM ${VAR:database_name}.product_sales_partition po JO
 CREATE TABLE IF NOT EXISTS ${VAR:database_name}.product_sales_region_partition PARTITIONED BY (sales_year, sales_month, region)
 COMMENT 'Parquet sales table partitioned by year, month, and region'
 STORED AS Parquet
-AS SELECT order_id, sales_person_id, customer_id, product_id, name, price, quantity, price * quantity AS total_sales_amount, order_date, region, sales_year, sales_month FROM ${VAR:database_name}.denormalized_sales_products_region_table; 
+AS SELECT order_id, sales_person_id, customer_id, product_id, name, price, quantity, price * quantity AS total_sales_amount, order_date, sales_year, sales_month, region FROM ${VAR:database_name}.denormalized_sales_products_region_table; 
 
 
