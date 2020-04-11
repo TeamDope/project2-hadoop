@@ -8,7 +8,9 @@
 * Yikun Qian
 
 ## Deliverable 2
-
+### 1. Issues with raw data:
+- 48 prices=0 in products
+- Duplicate customerid in customers (customerid=17829 appears twice)
 ## Deliverable 3
 
 **2. Performance on the view Using Partitioned Data vs. Performance on View Using Non-Partitioned Data
