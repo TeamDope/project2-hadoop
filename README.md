@@ -7,10 +7,25 @@
 * Ansh Sikka
 * Yikun Qian
 
-## Deliverable 2
+## Deployment RunBook
+1. Clone the directory from GitHub: `git clone https://github.com/TeamDope/project2-hadoop.git`
+2. CD into the cloned directory: `cd project2-hadoop`
+3. To Run All Deliverables, simply type  `make all`
+4. To Run Deliverable 2, simply type `make deliverable-2`
+5. To Run Deliverable 3, simply type  `make deliverable-3`
+6. To delete all data and tables/clean up, simply type `make clean`
+
+## Issues/Challanges
 ### 1. Issues with raw data:
 - 48 prices=0 in products
 - Duplicate customerid in customers (customerid=17829 appears twice)
+- Some regions are uppercase, some are lowercase.
+### 2. Issues with Data Pipeline
+The VM might need to be scaled up to a higher memory amount (>8gb) to get a more consistent flow in loading data and not running into memory issues. This specifically happens in Deliverable 3 Part 1-3 when the data is joined (denormalized) between the sales, products, and employees table. During denormalization, the memory can become overloaded, causing it to prematurely stop loading data. Afterwards, building the partitions off this data would not properly work since the data isn't properly loaded. 
+### 3. Challanges
+- Hadoop NameNode being down --> having to consistently restart Cloudera services (unstable on VM)
+- Permission when running some bash scripts --> Had to manually change it or call a different command
+- Yikun only had 8gb of RAM on her computer which made it hard for her to properly run the VM on her machine. Being able to not work in-person together made this pretty tough.
 ## Deliverable 3
 
 **2. Performance on the view Using Partitioned Data vs. Performance on View Using Non-Partitioned Data
