@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS ${var:database}.customers
 COMMENT 'Parquet customers table'
 STORED AS Parquet
 AS
-SELECT cutomer_id, first_name, middle_initial, last_name
+SELECT customer_id, first_name, middle_initial, last_name
 from ${var:source_database}.customers;
 
 
@@ -47,3 +47,10 @@ STORED AS Parquet
 AS
 SELECT product_id, name, price
 from ${var:source_database}.products;
+
+
+invalidate metadata;
+compute stats ${var:database}.employees;
+compute stats ${var:database}.customers;
+compute stats ${var:database}.orders;
+compute stats ${var:database}.products;
