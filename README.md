@@ -15,6 +15,47 @@
 5. To Run Deliverable 3, simply type  `make deliverable-3`
 6. To delete all data and tables/clean up, simply type `make clean`
 
+## User Documentation
+### Data
+- Employees
+  - first_name
+  - middle_initial 
+  - employee_id
+  - region
+- Products
+  - product_id
+  - name
+  - price
+- Orders
+  - order_id
+  - sales_person_id
+  - customer_id
+  - product_id
+  - quantity
+  - date
+- Customers
+  - customer_id
+  - first_name
+  - middle_initial
+  - last_name
+## Tables and Views
+- dope_sales_raw
+  - employees: Raw Employees Table
+  - products: Raw Products Table
+  - orders: Raw Orders Table
+  - customers: Raw Customers Table
+- dope_sales
+  - employees: Cleaned Employees Table
+  - products: Cleaned Products Table
+  - orders: Cleaned Orders Table
+  - customers: Cleaned Customers Table
+  - customer_monthly_sales_2019_partitioned_view: Sales by month in 2019--> Based on partition by month and year
+  - customer_monthly_sales_2019_view: Sales by month in 2019 from regular data
+  - denormalized_sales_product_table: Product and sales data combined (includes all order data with price and product id)
+  - product_sales_partition: Partitioned table by month and year for all sales for each product
+  - product_sales_region_partition: Partitioned table by month, year, and region for all sales for each product
+  - denormalized_sales_products_region_table: Product, sales, and employee data compbined (includes all order data with price of product and region based on salesperson id)
+  - top_ten_customers_amount: The total amount of sales for the top ten customers
 ## Issues/Challanges
 ### 1. Issues with raw data:
 - 48 prices=0 in products
